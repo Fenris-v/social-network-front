@@ -3,7 +3,7 @@
   "version": "1.1.26",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --port=8088",
+    "serve": "vue-cli-service serve --port=3001",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
     "docker:arm": "docker build . -t team-group/front:%npm_package_version%-arm -t team-group/front:latest-arm --platform linux/amd64",
