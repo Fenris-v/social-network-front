@@ -1,0 +1,36 @@
+image: node:16.13.1
+  
+
+stages:
+  - build_local
+  - deploy_docker_local
+
+
+build_local:
+  stage: build_local
+  only:
+    - local
+  before_script:
+    - npm install
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+deploy_docker_local:
+  image: docker:19.03.12
+  stage: deploy_docker_local
+  only:
+    - local
+  before_script:
+    - docker logout
+    - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+  script:
+    - docker build -f Dockerfile-ci-local -t $BACK_IMAGE_LOCAL .
+    - docker push $BACK_IMAGE_LOCAL
+    - echo "Frontend-local deploy stage end"
+  artifacts:
+    paths:
+      - dist
+
