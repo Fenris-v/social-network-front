@@ -1,7 +1,9 @@
 module.exports = {
   runtimeCompiler: true,
   devServer: {
-    proxy: 'http://130.61.44.151/',
-    // proxy: 'http://localhost:8080/',
+    host: 'localhost',
+    port: 3001,
+    public: 'localhost:3001',
+    disableHostCheck: true,
   },
 };
