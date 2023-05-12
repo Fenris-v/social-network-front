@@ -2,11 +2,11 @@
 // import store from "@/store";
 
 export default {
-  install(Vue) {
+  install(Vue, options) {
     let socket;
     Vue.prototype.$socket = {
       connect() {
-        const serverUrl = 'ws://localhost:8888/api/v1/streaming/ws';
+        const serverUrl = 'ws://' + options.server + '/api/v1/streaming/ws';
         socket = new WebSocket(serverUrl);
         console.log('function connect');
         socket.onopen = () => {
