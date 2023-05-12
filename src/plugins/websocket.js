@@ -2,11 +2,11 @@
 // import store from "@/store";
 
 export default {
-  install(Vue) {
+  install(Vue, options) {
     let socket;
     Vue.prototype.$socket = {
       connect() {
-        const serverUrl = 'ws://localhost:8888/api/v1/streaming/ws';
+        const serverUrl = 'ws://' + options.server + '/api/v1/streaming/ws';
         socket = new WebSocket(serverUrl);
         console.log('function connect');
         socket.onopen = () => {
@@ -21,7 +21,7 @@ export default {
         };
 
         socket.onmessage = (event) => {
-          let serverMessage = { type: 'none' };
+          let serverMessage = {type: 'none'};
           let msg = event.data;
           // let msg = JSON.stringify(event.data);
 
@@ -65,13 +65,13 @@ export default {
 
         socket.onerror = (e) => {
           // Сервер недоступен
-          console.log('connect error!!', { e });
+          console.log('connect error!!', {e});
           return;
         };
 
         socket.onclose = (e) => {
           // Сервер недоступен
-          console.log('connecttion closed!!', { e });
+          console.log('connecttion closed!!', {e});
           return;
         };
       },
