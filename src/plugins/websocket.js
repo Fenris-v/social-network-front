@@ -78,7 +78,6 @@ export default {
 
       sendMessage: function (payload) {
         const message = JSON.stringify(payload);
-        console.log(message);
         socket.send(message);
       },
 

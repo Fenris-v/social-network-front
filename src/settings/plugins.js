@@ -27,4 +27,4 @@ import chat from '@/plugins/websocket';
 // import VueSocketIO from 'vue-socket.io';
 // Vue.use(chat, { server: 'localhost:8088' });
 
-Vue.use(chat, { server: 'localhost:8099' });
+Vue.use(chat, { server: '151.248.122.152' });

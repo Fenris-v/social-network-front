@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --port=3001",
     "build": "vue-cli-service build",
+    "prod": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint --fix",
     "docker:arm": "docker build . -t team-group/front:%npm_package_version%-arm -t team-group/front:latest-arm --platform linux/amd64",
     "docker:default": "docker build . -t team-group/front:%npm_package_version% -t team-group/front:latest-default",
