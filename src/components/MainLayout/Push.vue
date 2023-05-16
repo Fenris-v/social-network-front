@@ -17,9 +17,11 @@
 
           <p class="push__content">
             <router-link class="push__content-name" :to="getRouteByNotification(info)">
-              <span class="push__content-preview">{{ info.content }}</span>
+              <span class="push__content-preview">
+                {{ info.author.firstName + ' ' + info.author.lastName }}
+              </span>
               {{ getNotificationsTextType(info.notificationType) }}
-              «{{ info.author.firstName + ' ' + info.author.lastName }}»
+              «{{ info.content }}»
             </router-link>
           </p>
 
