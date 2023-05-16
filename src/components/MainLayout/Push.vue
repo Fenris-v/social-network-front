@@ -25,7 +25,7 @@
             </router-link>
           </p>
 
-          <span class="push__time">{{ info.sentTime | moment('from') }}</span>
+          <span class="push__time">{{ info.timestamp | moment('from') }}</span>
         </div>
       </div>
 
