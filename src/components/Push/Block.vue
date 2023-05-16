@@ -1,12 +1,12 @@
 <template>
   <div class="push-block">
     <div class="push__img" v-if="info.author.photo">
-      <img :src="info.author.photo" :alt="info.author.firstName[0]" />
+      <img :src="info.author.photo" :alt="info.author.firstName" />
     </div>
 
     <div class="push__img" v-else>
       <div>
-        {{ info.author.firstName[0] + ' ' + info.author.lastName[0] }}
+        {{ info.author.firstName + ' ' + info.author.lastName }}
       </div>
     </div>
 
