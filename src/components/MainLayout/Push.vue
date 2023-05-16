@@ -11,7 +11,7 @@
             </div>
 
             <div v-else>
-              {{ info.author.firstName[0] + ' ' + info.author.lastName[0] }}
+              {{ info.author.firstName + ' ' + info.author.lastName }}
             </div>
           </div>
 
