@@ -21,7 +21,13 @@
                 {{ info.author.firstName + ' ' + info.author.lastName }}
               </span>
               {{ getNotificationsTextType(info.notificationType) }}
-              «{{ info.content }}»
+              <template
+                v-if="
+                  info.notificationType === 'POST' || info.notificationType === 'FRIEND_BIRTHDAY'
+                "
+              >
+                «{{ info.content }}»
+              </template>
             </router-link>
           </p>
 
