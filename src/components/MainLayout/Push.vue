@@ -45,6 +45,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import { getRouteByNotification } from '@/utils/notifications.utils.js';
+
 export default {
   name: 'Push',
   props: {
@@ -103,112 +104,273 @@ export default {
 @import '../../assets/stylus/base/vars.styl'
 
 .push
-  .push__overlay
-    display none
-
-  &.open
-    .push__overlay
-      display block
-
 .push__overlay
-  position fixed
-  top 0
-  left 0
-  right 0
-  bottom 0
-  z-index -1
-  cursor default
+display none
+&.open
+.push__overlay
+display block
+.push__overlay
+position fixed
+top
 
+0
+left
+
+0
+right
+
+0
+bottom
+
+0
+z-index
+
+-
+1
+cursor default
 .push__wrap
-  position fixed
-  background #FFf
-  box-shadow 0px 2px 60px rgba(0, 0, 0, 0.1)
-  right 50px
-  top header-height
-  width 100%
-  max-width 710px
-  max-height 675px
-  z-index 100
-  opacity 0
-  visibility hidden
-  transform translateY(-20px)
-  transition all 0.2s
-  overflow-y auto
+position fixed
+background #FFf
+box-shadow
 
-  &.open
-    transform translateY(0)
-    opacity 1
-    visibility visible
+0
+px
 
-  &:before, &:after
-    content ''
-    display block
-    width 19px
-    height 38px
-    position absolute
-    top -16px
+2
+px
 
-  &:before
-    background-image linear-gradient(115deg, transparent 50%, #fff 50%)
-    right 223px
+60
+px
 
-  &:after
-    background-image linear-gradient(245deg, transparent 50%, #fff 50%)
-    right 205px
+rgba
+(
+0
+,
+0
+,
+0
+,
+0.1
+)
+right
 
+50
+px
+top header-height
+width
+
+100
+%
+max-width
+
+710
+px
+max-height
+
+675
+px
+z-index
+
+100
+opacity
+
+0
+visibility hidden
+transform
+
+translateY
+(
+-
+20
+px
+
+)
+transition all
+
+0.2
+s
+overflow-y auto
+&.open
+transform
+
+translateY
+(
+0
+)
+opacity
+
+1
+visibility visible
+&:before, &:after
+content
+
+''
+display block
+width
+
+19
+px
+height
+
+38
+px
+position absolute
+top
+
+-
+16
+px
+&:before
+background-image
+
+linear-gradient
+(
+115
+deg, transparent
+
+50
+%
+,
+#fff
+
+50
+%
+)
+right
+
+223
+px
+&:after
+background-image
+
+linear-gradient
+(
+245
+deg, transparent
+
+50
+%
+,
+#fff
+
+50
+%
+)
+right
+
+205
+px
 .push__list
-  overflow-y auto
-  max-height 450px
+overflow-y auto
+max-height
 
+450
+px
 .push__item
-  display flex
-  align-items center
-  padding 35px 0
-  margin 0 40px
-  max-height 70px
+display flex
+align-items center
+padding
 
-  &+&
-    border-top 1px solid #E7E7E7
+35
+px
 
+0
+margin
+
+0
+40
+px
+max-height
+
+70
+px
+& + &
+border-top
+
+1
+px solid #E7E7E7
 .push__btn
-  display flex
-  align-items center
-  justify-content center
-  font-weight bold
-  font-size 15px
-  letter-spacing 0.01em
-  color eucalypt
-  border-top 1px solid #E7E7E7
-  height 55px
+display flex
+align-items center
+justify-content center
+font-weight bold
+font-size
 
+15
+px
+letter-spacing
+
+0.01
+em
+color eucalypt
+border-top
+
+1
+px solid #E7E7E7
+height
+
+55
+px
 .main-layout__user-pic
-  width 50px
-  height 50px
-  border-radius 50%
-  overflow hidden
-  margin-right 15px
-  flex none
-  background-color #8bc49e
+width
 
-  div
-    display flex
-    align-items center
-    justify-content center
-    width 100%
-    height 100%
-    object-fit cover
+50
+px
+height
 
-  img
-    display flex
-    align-items center
-    justify-content center
-    width 100%
-    height 100%
-    object-fit cover
+50
+px
+border-radius
 
-@media (max-width 992px)
-  .push__wrap
-    right 0
-    left 120px
-    width auto
+50
+%
+overflow hidden
+margin-right
+
+15
+px
+flex none
+background-color #8bc49e
+div
+display flex
+align-items center
+justify-content center
+width
+
+100
+%
+height
+
+100
+%
+object-fit cover
+img
+display flex
+align-items center
+justify-content center
+width
+
+100
+%
+height
+
+100
+%
+object-fit cover
+
+@media (max-width
+
+992
+px
+
+)
+.push__wrap
+right
+
+0
+left
+
+120
+px
+width auto
 </style>
