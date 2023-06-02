@@ -18,9 +18,9 @@ export default {
         case 'COMMENT_COMMENT':
           return 'ответил на ваш комментарий';
         case 'FRIEND_REQUEST':
-          return 'от пользователя';
+          return 'хочет дружить';
         case 'FRIEND_BIRTHDAY':
-          return 'день рождение';
+          return 'отмечает свой день рождения!';
         case 'MESSAGE':
           return 'прислал сообщение';
       }
